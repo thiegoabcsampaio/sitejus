@@ -43,11 +43,13 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <div class="logo">Otimiza<span>Jus</span></div>
+            <div class="logo-wrapper">
+                <img src="./assets/logo/logo.svg" alt="OtimizaJus" class="logo-img">
+            </div>
             <nav class="desktop-nav">
                 <a href="#como-funciona">Como Funciona</a>
                 <a href="#beneficios">Benefícios</a>
-                <a href="#" class="btn-primary-outline cta-agendar" data-cta="header">Agende Demonstração</a>
+                <a href="#" class="btn-primary-outline cta-agendar" data-cta="header">Agende uma reunião</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Abrir menu">☰</button>
         </div>
@@ -57,13 +59,13 @@
         <!-- Hero Section -->
         <section class="hero container" data-section="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Você cuida da Advocacia.<br><span class="highlight">A OtimizaJus cuida da operação.</span></h1>
+                <h1 class="hero-title">Você cuida da Advocacia.<br>A <span style="color: var(--color-vinho)">Otimiza</span><span style="color: var(--color-dourado)">Jus</span> cuida da operação.</h1>
                 <p class="hero-subtitle">Suporte jurídico, administrativo e operacional para Advogados e escritórios que querem mais organização, produtividade e tempo para crescer.</p>
                 <p class="hero-text-small">Deixe as tarefas que tomam seu tempo com quem entende da rotina jurídica.</p>
                 
                 <div class="cta-group">
                     <button class="btn-primary cta-whatsapp" data-cta="hero" data-context="hero">Consultora OtimizaJus</button>
-                    <button class="btn-secondary cta-agendar" data-cta="hero">Agende Demonstração</button>
+                    <button class="btn-secondary cta-agendar" data-cta="hero">Agende uma reunião</button>
                 </div>
                 <p class="hero-reinforce"><strong>Mais organização. Menos sobrecarga. Mais tempo para o que realmente importa.</strong></p>
             </div>
@@ -72,26 +74,33 @@
         <!-- Segmentação de Público -->
         <section class="audience container" data-section="segmentation">
             <h2 class="section-title text-center">Como podemos ajudar sua operação?</h2>
-            <div class="audience-grid">
+            
+            <div class="audience-grid two-cols">
+                <!-- Advogado -->
                 <button class="audience-card" data-audience="advogado">
-                    <div class="audience-icon">⚖️</div>
+                    <img src="./assets/icons/advogado.svg" class="audience-icon" alt="Ícone Advogado">
                     <h3>Sou Advogado(a)</h3>
                 </button>
+                
+                <!-- Escritório -->
                 <button class="audience-card" data-audience="escritorio_advocacia">
-                    <div class="audience-icon">🏢</div>
+                    <img src="./assets/icons/escritorio.svg" class="audience-icon" alt="Ícone Escritório">
                     <h3>Tenho um escritório de Advocacia</h3>
                 </button>
-                <button class="audience-card" data-audience="empresa_imobiliaria">
-                    <div class="audience-icon">🤝</div>
-                    <h3>Sou uma empresa / imobiliária</h3>
-                </button>
             </div>
-            <!-- Dynamic Message Container -->
-            <div id="audience-message" class="audience-message hidden"></div>
+
+            <!-- Dynamic Services Container (Abre ao clicar nos cards acima) -->
+            <div id="specific-services-container" class="specific-services-container hidden">
+                <div id="audience-message" class="audience-message"></div>
+                <div class="specific-services-list" id="services-list">
+                    <!-- Preenchido via JS dependendo de quem foi clicado -->
+                </div>
+            </div>
         </section>
 
-        <!-- Serviços (Cards Interativos focado em Dores) -->
+        <!-- Serviços Gerais (Cards Interativos focado em Dores) -->
         <section class="services container" data-section="services">
+            <h2 class="section-title text-center">Nossos Serviços</h2>
             <div class="services-grid">
                 <!-- Card 1 -->
                 <div class="service-card" data-service="gestao_organizacao">
@@ -203,74 +212,116 @@
             </div>
         </section>
 
-        <!-- Como Funciona -->
+        <!-- Como Funciona (Timeline Interativa) -->
         <section id="como-funciona" class="process container" data-section="process">
             <h2 class="section-title text-center">Simples, personalizado e pensado para a sua rotina.</h2>
+            <p class="text-center" style="margin-bottom: 2rem; color: var(--color-cinza);">Clique nas etapas para entender o processo.</p>
+            
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item interactive">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>Entendemos sua necessidade</h3>
-                        <p>Conversamos para conhecer sua rotina e identificar desafios e tarefas delegáveis.</p>
+                        <div class="step-header">
+                            <h3>Entendemos sua necessidade</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="step-body">
+                            <p>Conversamos para conhecer sua rotina e identificar desafios e tarefas que podem ser delegadas.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                
+                <div class="timeline-item interactive">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Definimos a solução</h3>
-                        <p>Escolhemos os serviços e o formato de suporte mais adequado para o seu momento.</p>
+                        <div class="step-header">
+                            <h3>Definimos a solução</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="step-body">
+                            <p>Escolhemos os serviços e o formato de suporte mais adequado para o seu momento.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                
+                <div class="timeline-item interactive">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Organizamos sua rotina</h3>
-                        <p>Estruturamos demandas, documentos, agendas, prazos e processos internos.</p>
+                        <div class="step-header">
+                            <h3>Organizamos sua rotina</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="step-body">
+                            <p>Estruturamos demandas, documentos, agendas, prazos e processos internos.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                
+                <div class="timeline-item interactive">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>Assumimos as tarefas</h3>
-                        <p>Nossa equipe executa as atividades definidas e mantém você sempre informado.</p>
+                        <div class="step-header">
+                            <h3>Assumimos as tarefas</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="step-body">
+                            <p>Nossa equipe executa as atividades definidas e mantém você sempre informado.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                
+                <div class="timeline-item interactive">
                     <div class="step-number">05</div>
                     <div class="step-content">
-                        <h3>Você ganha tempo</h3>
-                        <p>Com a operação sob controle, você volta a focar em clientes, estratégia e crescimento.</p>
+                        <div class="step-header">
+                            <h3>Você ganha tempo</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="step-body">
+                            <p>Com a operação sob controle, você volta a focar em clientes, estratégia e crescimento.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefícios -->
+        <!-- Benefícios Divididos -->
         <section id="beneficios" class="benefits container" data-section="benefits">
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h4>⏳ Mais tempo</h4>
-                    <p>Pare de gastar horas preciosas com tarefas operacionais e burocráticas.</p>
+            <!-- Bloco 1 -->
+            <div class="benefits-group">
+                <h2 class="text-center">Você ganha <span class="highlight">mais:</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h4>Tempo</h4>
+                        <p>Pare de gastar horas preciosas com tarefas operacionais e burocráticas.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Organização</h4>
+                        <p>Tenha seus documentos, agendas e demandas estruturados com excelência.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Produtividade</h4>
+                        <p>Reduza retrabalho, melhore o fluxo de informação e torne a rotina eficiente.</p>
+                    </div>
                 </div>
-                <div class="benefit-item">
-                    <h4>📂 Mais organização</h4>
-                    <p>Tenha seus documentos, agendas e demandas estruturados com excelência.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>🚀 Mais produtividade</h4>
-                    <p>Reduza retrabalho, melhore o fluxo de informação e torne a equipe eficiente.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>💬 Atendimento ágil</h4>
-                    <p>Garantimos respostas rápidas e suporte eficiente para solicitações.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>⚖️ Foco na Advocacia</h4>
-                    <p>Delegue o operacional para se concentrar no trabalho jurídico que gera valor.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>🏢 Apoio profissional</h4>
-                    <p>Tenha estrutura corporativa sem precisar montar equipe interna grande.</p>
+            </div>
+
+            <!-- Bloco 2 -->
+            <div class="benefits-group" style="margin-top: 4rem;">
+                <h2 class="text-center">Você ganha <span class="highlight">melhor:</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h4>Atendimento ágil</h4>
+                        <p>Garantimos respostas rápidas e suporte eficiente para todas as solicitações.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Foco na Advocacia</h4>
+                        <p>Delegue o operacional para se concentrar no trabalho jurídico que gera valor.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Apoio profissional</h4>
+                        <p>Tenha estrutura corporativa sem precisar montar equipe interna grande.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -302,18 +353,68 @@
                 <p>Conte com a OtimizaJus para assumir parte da operação e deixar sua rotina mais organizada, produtiva e eficiente.</p>
                 <div class="cta-group justify-center">
                     <button class="btn-primary cta-whatsapp" data-cta="final" data-context="default">Consultora OtimizaJus</button>
-                    <button class="btn-secondary cta-agendar" data-cta="final">Agende Demonstração</button>
+                    <button class="btn-secondary cta-agendar" data-cta="final">Agende uma reunião</button>
                 </div>
             </div>
         </section>
+
+        <!-- Contato e Redes Sociais -->
+        <section class="contact-social container" data-section="contact">
+            <div class="contact-grid">
+                
+                <!-- Redes Sociais -->
+                <div class="social-box">
+                    <h3>Veja nossas redes sociais</h3>
+                    <p>Acompanhe nosso trabalho e dicas para a sua rotina jurídica.</p>
+                    <div class="social-icons-large" id="social-container-large">
+                        <!-- Renderizado via JS -->
+                    </div>
+                </div>
+
+                <!-- Formulário de Email -->
+                <div class="email-box">
+                    <h3>Prefere e-mail?</h3>
+                    <p>Envie uma mensagem e retornaremos rapidamente.</p>
+                    <form class="email-form" action="#" method="POST" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail de retorno</label>
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Selecione um assunto...</option>
+                                <option value="Agendar Reunião">Agendar reunião</option>
+                                <option value="Conhecer Mais">Conhecer mais</option>
+                                <option value="Parcerias">Parcerias</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Texto</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-100">Enviar Mensagem</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <div class="logo">Otimiza<span>Jus</span></div>
-                <p>Você cuida da Advocacia. A OtimizaJus cuida da operação.</p>
+                <div class="logo-wrapper-small">
+                    <img src="./assets/logo/logo.svg" alt="OtimizaJus" class="logo-img-small">
+                </div>
+                <p style="margin-top: 1rem;">Você cuida da Advocacia. A OtimizaJus cuida da operação.</p>
             </div>
             <div class="footer-links">
                 <button class="cta-whatsapp btn-text" data-cta="footer">Falar no WhatsApp</button>
