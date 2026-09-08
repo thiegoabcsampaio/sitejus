@@ -42,9 +42,9 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container header-container">
-            <div class="logo-wrapper">
-                <img src="./assets/logo/logo.png" alt="OtimizaJus" class="logo-img">
+        <div class="container header-container" style="justify-content: center;">
+            <div class="logo-wrapper" style="display: none;">
+                <!-- Logo removida do header conforme pedido para o hero -->
             </div>
             <nav class="desktop-nav">
                 <a href="#como-funciona">Como Funciona</a>
@@ -57,9 +57,15 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero container" data-section="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Você cuida da Advocacia.<br>A <span style="color: var(--color-vinho)">Otimiza</span><span style="color: var(--color-dourado)">Jus</span> cuida da operação.</h1>
+        <section class="hero container" data-section="hero" style="text-align: center;">
+            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="hero-logo-wrapper" style="margin-bottom: 2rem;">
+                    <img src="./assets/logo/logo.png" alt="OtimizaJus Logo" style="height: 180px; width: auto; mix-blend-mode: multiply; max-width: 100%;">
+                </div>
+                <h1 class="hero-title">
+                    <span style="color: var(--color-vinho);">Você cuida da Advocacia.</span><br>
+                    <span style="color: var(--color-cinza);">A <span style="color: var(--color-vinho)">Otimiza</span><span style="color: var(--color-dourado)">Jus</span> cuida da operação.</span>
+                </h1>
                 <p class="hero-subtitle">Suporte jurídico, administrativo e operacional para Advogados e escritórios que querem mais organização, produtividade e tempo para crescer.</p>
                 <p class="hero-text-small">Deixe as tarefas que tomam seu tempo com quem entende da rotina jurídica.</p>
                 
