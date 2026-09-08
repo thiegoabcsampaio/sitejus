@@ -2,7 +2,7 @@
     /* Identidade Visual - Cores Oficiais */
     --color-vinho: #722F37;
     --color-bege: #E8DCCB;
-    --color-offwhite: #F8F5F0;
+    --color-offwhite: #FBF7F2; /* Ajustado para combinar com o fundo da logo enviada */
     --color-cinza: #6B6865;
     --color-dourado: #B89B5E;
 
@@ -55,14 +55,13 @@ p { color: var(--color-cinza); font-size: 1.05rem; }
 .highlight { color: var(--color-dourado); }
 
 /* Logos e Imagens */
-.logo-img { height: 40px; width: auto; }
-.logo-img-small { height: 30px; width: auto; }
+.logo-img { height: 100px; width: auto; mix-blend-mode: multiply; }
+.logo-img-small { height: 70px; width: auto; mix-blend-mode: multiply; }
 .audience-icon { width: 48px; height: 48px; margin-bottom: 1rem; color: var(--color-vinho); }
 
 /* Header */
 .header {
-    background: rgba(248, 245, 240, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--color-offwhite);
     border-bottom: 1px solid rgba(114, 47, 55, 0.1);
     position: sticky;
     top: 0;
