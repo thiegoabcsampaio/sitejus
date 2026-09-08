@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtimizaJus | Gestão e Suporte Operacional para Advocacia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Suporte jurídico, administrativo e operacional para Advogados e escritórios que querem mais organização, produtividade e tempo para crescer.">
+    <meta name="keywords" content="suporte jurídico, suporte administrativo, suporte operacional, gestão jurídica, organização de escritório, gestão de prazos, gestão de audiências">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="OtimizaJus | Mais que suporte. Somos parte da sua operação.">
+    <meta property="og:description" content="Deixe as tarefas que tomam seu tempo com quem entende da rotina jurídica. Gestão, atendimento, prazos e muito mais.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- GA4 Tag (Injetada via JS baseada no config.js) -->
+    <script src="./js/config.js"></script>
+    <script>
+      if(CONFIG.GA4_MEASUREMENT_ID && CONFIG.GA4_MEASUREMENT_ID !== "G-XXXXXXXXXX"){
+          const gaScript = document.createElement('script');
+          gaScript.async = true;
+          gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+          document.head.appendChild(gaScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', CONFIG.GA4_MEASUREMENT_ID);
+      }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Otimiza<span>Jus</span></div>
+            <nav class="desktop-nav">
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#" class="btn-primary-outline cta-agendar" data-cta="header">Agende Demonstração</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container" data-section="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Você cuida da Advocacia.<br><span class="highlight">A OtimizaJus cuida da operação.</span></h1>
+                <p class="hero-subtitle">Suporte jurídico, administrativo e operacional para Advogados e escritórios que querem mais organização, produtividade e tempo para crescer.</p>
+                <p class="hero-text-small">Deixe as tarefas que tomam seu tempo com quem entende da rotina jurídica.</p>
+                
+                <div class="cta-group">
+                    <button class="btn-primary cta-whatsapp" data-cta="hero" data-context="hero">Consultora OtimizaJus</button>
+                    <button class="btn-secondary cta-agendar" data-cta="hero">Agende Demonstração</button>
+                </div>
+                <p class="hero-reinforce"><strong>Mais organização. Menos sobrecarga. Mais tempo para o que realmente importa.</strong></p>
+            </div>
+        </section>
+
+        <!-- Segmentação de Público -->
+        <section class="audience container" data-section="segmentation">
+            <h2 class="section-title text-center">Como podemos ajudar sua operação?</h2>
+            <div class="audience-grid">
+                <button class="audience-card" data-audience="advogado">
+                    <div class="audience-icon">⚖️</div>
+                    <h3>Sou Advogado(a)</h3>
+                </button>
+                <button class="audience-card" data-audience="escritorio_advocacia">
+                    <div class="audience-icon">🏢</div>
+                    <h3>Tenho um escritório de Advocacia</h3>
+                </button>
+                <button class="audience-card" data-audience="empresa_imobiliaria">
+                    <div class="audience-icon">🤝</div>
+                    <h3>Sou uma empresa / imobiliária</h3>
+                </button>
+            </div>
+            <!-- Dynamic Message Container -->
+            <div id="audience-message" class="audience-message hidden"></div>
+        </section>
+
+        <!-- Serviços (Cards Interativos focado em Dores) -->
+        <section class="services container" data-section="services">
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-service="gestao_organizacao">
+                    <div class="card-front">
+                        <div class="pain-point">A desorganização e falta de estrutura tomam horas do seu dia.</div>
+                        <h3 class="service-name">Gestão e Organização</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Gestão e Organização</h3>
+                        <ul>
+                            <li>Organização de documentos (Google Drive)</li>
+                            <li>Gestão de arquivos e rotina do escritório</li>
+                            <li>Controle de agenda e compromissos</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card" data-service="gestao_prazos_audiencias">
+                    <div class="card-front">
+                        <div class="pain-point">Atividades críticas que não podem ser esquecidas.</div>
+                        <h3 class="service-name">Gestão de Prazos e Audiências</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Gestão de Prazos e Audiências</h3>
+                        <ul>
+                            <li>Controle de prazos processuais</li>
+                            <li>Gestão da pauta de audiências</li>
+                            <li>Lembretes para advogados e prepostos</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card" data-service="atendimento_relacionamento">
+                    <div class="card-front">
+                        <div class="pain-point">Clientes esperando retorno enquanto você foca no processo.</div>
+                        <h3 class="service-name">Atendimento e Relacionamento</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Atendimento e Relacionamento</h3>
+                        <ul>
+                            <li>Atendimento inicial via WhatsApp</li>
+                            <li>Triagem e acompanhamento de clientes</li>
+                            <li>Cobrança de inadimplentes</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card" data-service="suporte_juridico">
+                    <div class="card-front">
+                        <div class="pain-point">Tarefas jurídicas operacionais ocupando seu tempo de Advocacia.</div>
+                        <h3 class="service-name">Suporte Jurídico</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Suporte Jurídico</h3>
+                        <ul>
+                            <li>Correspondência jurídica e diligências</li>
+                            <li>Elaboração de documentos de apoio</li>
+                            <li>Levantamento de informações processuais</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card" data-service="administrativo_financeiro">
+                    <div class="card-front">
+                        <div class="pain-point">O financeiro consumindo o tempo de atender clientes.</div>
+                        <h3 class="service-name">Administrativo e Financeiro</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Administrativo e Financeiro</h3>
+                        <ul>
+                            <li>Controle de contas a pagar e receber</li>
+                            <li>Emissão de cobranças</li>
+                            <li>Relatórios gerenciais</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card" data-service="marketing_digital">
+                    <div class="card-front">
+                        <div class="pain-point">Sua operação digital fica para depois porque a rotina não deixa.</div>
+                        <h3 class="service-name">Marketing e Presença Digital</h3>
+                        <span class="view-more">Saiba como resolvemos →</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Marketing Digital</h3>
+                        <ul>
+                            <li>Gestão de redes sociais (Insta/LinkedIn)</li>
+                            <li>Planejamento e criação de conteúdo</li>
+                            <li>Atendimento de leads digitais</li>
+                        </ul>
+                        <button class="btn-outline-small cta-whatsapp" data-context="service">Falar com Consultora</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona -->
+        <section id="como-funciona" class="process container" data-section="process">
+            <h2 class="section-title text-center">Simples, personalizado e pensado para a sua rotina.</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Entendemos sua necessidade</h3>
+                        <p>Conversamos para conhecer sua rotina e identificar desafios e tarefas delegáveis.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Definimos a solução</h3>
+                        <p>Escolhemos os serviços e o formato de suporte mais adequado para o seu momento.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Organizamos sua rotina</h3>
+                        <p>Estruturamos demandas, documentos, agendas, prazos e processos internos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Assumimos as tarefas</h3>
+                        <p>Nossa equipe executa as atividades definidas e mantém você sempre informado.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Você ganha tempo</h3>
+                        <p>Com a operação sob controle, você volta a focar em clientes, estratégia e crescimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios -->
+        <section id="beneficios" class="benefits container" data-section="benefits">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>⏳ Mais tempo</h4>
+                    <p>Pare de gastar horas preciosas com tarefas operacionais e burocráticas.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>📂 Mais organização</h4>
+                    <p>Tenha seus documentos, agendas e demandas estruturados com excelência.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🚀 Mais produtividade</h4>
+                    <p>Reduza retrabalho, melhore o fluxo de informação e torne a equipe eficiente.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>💬 Atendimento ágil</h4>
+                    <p>Garantimos respostas rápidas e suporte eficiente para solicitações.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>⚖️ Foco na Advocacia</h4>
+                    <p>Delegue o operacional para se concentrar no trabalho jurídico que gera valor.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🏢 Apoio profissional</h4>
+                    <p>Tenha estrutura corporativa sem precisar montar equipe interna grande.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferencial / Posicionamento -->
+        <section class="differential container text-center" data-section="differential">
+            <h2>Mais que suporte. <span class="highlight">Somos parte da sua operação.</span></h2>
+            <p class="differential-sub">A OtimizaJus entende a rotina do cliente e se adapta a ela.</p>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <h4>Atendimento personalizado</h4>
+                    <p>Entendemos a sua rotina específica e adaptamos o serviço às reais necessidades.</p>
+                </div>
+                <div class="diff-card">
+                    <h4>Organização e eficiência</h4>
+                    <p>Estruturamos tarefas para reduzir drasticamente desorganização e retrabalho.</p>
+                </div>
+                <div class="diff-card">
+                    <h4>Suporte completo</h4>
+                    <p>Agenda, audiências, relacionamento com clientes e operacional integrados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="final-cta container text-center" data-section="final-cta">
+            <div class="final-box">
+                <h2>Mais organização para o seu escritório.<br>Mais tempo para você.</h2>
+                <p>Conte com a OtimizaJus para assumir parte da operação e deixar sua rotina mais organizada, produtiva e eficiente.</p>
+                <div class="cta-group justify-center">
+                    <button class="btn-primary cta-whatsapp" data-cta="final" data-context="default">Consultora OtimizaJus</button>
+                    <button class="btn-secondary cta-agendar" data-cta="final">Agende Demonstração</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">Otimiza<span>Jus</span></div>
+                <p>Você cuida da Advocacia. A OtimizaJus cuida da operação.</p>
+            </div>
+            <div class="footer-links">
+                <button class="cta-whatsapp btn-text" data-cta="footer">Falar no WhatsApp</button>
+                <div class="social-links" id="social-container">
+                    <!-- Gerado dinamicamente via JS -->
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 OtimizaJus. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA (Visível apenas no mobile) -->
+    <div class="mobile-sticky-cta">
+        <button class="btn-primary-small cta-whatsapp" data-cta="sticky">WhatsApp</button>
+        <button class="btn-secondary-small cta-agendar" data-cta="sticky">Agendar</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
