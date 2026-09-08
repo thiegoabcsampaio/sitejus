@@ -373,9 +373,13 @@
 
                 <!-- Formulário de Email -->
                 <div class="email-box">
-                    <h3>Prefere e-mail?</h3>
-                    <p>Envie uma mensagem e retornaremos rapidamente.</p>
-                    <form class="email-form" action="#" method="POST" id="contact-form">
+                    <div class="step-header" id="toggle-email-form">
+                        <h3>Prefere e-mail?</h3>
+                        <span class="toggle-icon email-toggle-icon">+</span>
+                    </div>
+                    <div class="email-form-wrapper" id="email-form-wrapper">
+                        <p style="margin-top: 1rem;">Envie uma mensagem e retornaremos rapidamente.</p>
+                        <form class="email-form" action="#" method="POST" id="contact-form">
                         <div class="form-group">
                             <label for="name">Nome</label>
                             <input type="text" id="name" name="name" required placeholder="Seu nome completo">
@@ -400,6 +404,7 @@
                         </div>
                         <button type="submit" class="btn-primary w-100">Enviar Mensagem</button>
                     </form>
+                    </div>
                 </div>
 
             </div>
@@ -409,22 +414,17 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <div class="logo-wrapper-small">
+        <div class="container footer-content text-center" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="footer-brand" style="margin-bottom: 2rem;">
+                <div class="logo-wrapper-small" style="display: flex; justify-content: center;">
                     <img src="./assets/logo/logo.svg" alt="OtimizaJus" class="logo-img-small">
                 </div>
                 <p style="margin-top: 1rem;">Você cuida da Advocacia. A OtimizaJus cuida da operação.</p>
             </div>
-            <div class="footer-links">
-                <button class="cta-whatsapp btn-text" data-cta="footer">Falar no WhatsApp</button>
-                <div class="social-links" id="social-container">
-                    <!-- Gerado dinamicamente via JS -->
-                </div>
-            </div>
         </div>
-        <div class="container footer-bottom">
+        <div class="container footer-bottom" style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 2rem; padding-bottom: 2rem;">
             <p>&copy; 2026 OtimizaJus. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--color-cinza);">Criado e desenhado por TABCS</p>
         </div>
     </footer>
 

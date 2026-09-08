@@ -271,7 +271,18 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .social-icon:hover { background: var(--color-vinho); color: white; transform: translateY(-5px); }
 
 /* Formulario */
-.email-form { margin-top: 1.5rem; }
+.email-form-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+.email-box.active .email-form-wrapper {
+    max-height: 800px; /* Suficiente para caber o forms */
+}
+.email-box.active .email-toggle-icon {
+    transform: rotate(45deg);
+}
+.email-form { margin-top: 1rem; }
 .form-group { margin-bottom: 1.5rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--color-vinho); }
 .form-group input, .form-group select, .form-group textarea {
@@ -286,12 +297,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 /* Footer */
-.footer { background: var(--color-white); border-top: 1px solid rgba(0,0,0,0.05); padding-top: 4rem; }
-.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
-.footer-brand p { margin-top: 1rem; max-width: 300px; }
-.social-links { display: flex; gap: 1rem; margin-top: 1rem; }
-.social-links a { color: var(--color-vinho); text-decoration: none; font-weight: 600; }
-.footer-bottom { text-align: center; padding: 2rem 0; border-top: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; }
+.footer { background: var(--color-white); border-top: 1px solid rgba(0,0,0,0.05); padding-top: 3rem; }
+.footer-brand p { margin-top: 1rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+.footer-bottom p { margin: 0; }
 
 /* Mobile Sticky CTA */
 .mobile-sticky-cta {

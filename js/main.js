@@ -138,7 +138,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstTimelineItem = document.querySelector('.timeline-item.interactive');
     if (firstTimelineItem) firstTimelineItem.classList.add('active');
 
-    // --- 6. Formulário de Email (Submissão Simbólica) ---
+    // --- 6. Formulário de Email Interativo ---
+    const emailToggleBtn = document.getElementById('toggle-email-form');
+    const emailBox = emailToggleBtn ? emailToggleBtn.closest('.email-box') : null;
+
+    if (emailToggleBtn && emailBox) {
+        emailToggleBtn.addEventListener('click', () => {
+            emailBox.classList.toggle('active');
+            if (emailBox.classList.contains('active')) {
+                trackEvent('email_form_open', {});
+            }
+        });
+    }
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -181,27 +193,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 8. Redes Sociais ---
-    const socialContainer = document.getElementById('social-container');
     const socialContainerLarge = document.getElementById('social-container-large');
     
-    if (socialContainer && socialContainerLarge) {
+    if (socialContainerLarge) {
         Object.keys(CONFIG.SOCIAL_LINKS).forEach(network => {
             const link = CONFIG.SOCIAL_LINKS[network];
             if (link) {
-                // Footer (Text Links)
-                const a = document.createElement('a');
-                a.href = link;
-                a.target = '_blank';
-                a.innerText = network.charAt(0).toUpperCase() + network.slice(1);
-                socialContainer.appendChild(a);
-
                 // Section Contato (Large Icons)
                 const iconLink = document.createElement('a');
                 iconLink.href = link;
                 iconLink.target = '_blank';
                 iconLink.className = 'social-icon';
                 iconLink.innerHTML = `<img src="./assets/icons/${network}.svg" alt="${network}" style="width: 24px;">`;
-                // Se o icone svg nao existir ele fica quebrado por enquanto
                 socialContainerLarge.appendChild(iconLink);
             }
         });
